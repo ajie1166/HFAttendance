@@ -14,9 +14,24 @@ namespace HFAttendance.WebSite.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection form)
+        {
+            string nick = form["nick"].ToString();
+            string pwd = form["pwd"].ToString();
+            if (nick == "lijie" && pwd == "123456")
+            {
+               return RedirectToAction("index", "user");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
