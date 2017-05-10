@@ -4,7 +4,9 @@ namespace HFAttendance.Model
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-
+    /// <summary>
+    /// 数据库访问上下文
+    /// </summary>
     public partial class HfAttendanceDbContext : DbContext
     {
         public HfAttendanceDbContext()
