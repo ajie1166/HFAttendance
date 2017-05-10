@@ -8,6 +8,7 @@ namespace HFAttendance.WebSite
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //bundles.add(Bundle类型) 本质:是将Bundle类型添加到字典中 ,该字典是以new ScriptBundle(string virtualPath)中的参数virtualPath为key(键),以Bundle实例(new ScriptBundle(path).Include(静态文件的虚拟路径))为value(值)的字段
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
