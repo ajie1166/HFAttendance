@@ -10,6 +10,7 @@ namespace HFAttendance.Model
         public HfAttendanceDbContext()
             : base("name=HfAttendanceDbContext")
         {
+
         }
 
         public virtual DbSet<HfItem> HfItem { get; set; }
