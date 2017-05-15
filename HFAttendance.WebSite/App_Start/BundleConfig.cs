@@ -27,7 +27,7 @@ namespace HFAttendance.WebSite
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/css").Include(
-                      "~/Content/bootstrap.min.css","~/Content/flat-ui.min.css"));
+                      "~/Content/bootstrap.min.css","~/Content/flat-ui.min.css","~/Content/demo.css"));
         }
     }
 }
