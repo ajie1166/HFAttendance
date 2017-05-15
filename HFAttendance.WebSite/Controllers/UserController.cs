@@ -9,7 +9,7 @@ namespace HFAttendance.WebSite.Controllers
 {
     public class UserController : Controller
     {
-        HfAttendanceDbContext db = new HfAttendanceDbContext();
+        AttendanceDbContext db = new AttendanceDbContext();
         // GET: User
         public ActionResult Index()
         {
@@ -25,16 +25,29 @@ namespace HFAttendance.WebSite.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection form)
         {
+
             string nick = form["nick"].ToString();
             string pwd = form["pwd"].ToString();
-            if (nick == "lijie" && pwd == "123456")
+
+            User user = db.Users.SingleOrDefault(u => u.NickName == nick);
+            if (user != null)
             {
-               return RedirectToAction("index", "user");
+                if (user.PassWord == pwd)
+                {
+                    return RedirectToAction("index", "user");
+                }
+                else
+                {
+                    ViewBag.ErrorMsg = "密码错误";
+                    return View();
+                }
             }
             else
             {
+                ViewBag.ErrorMsg = "用户名不存在";
                 return View();
             }
+
         }
     }
 }

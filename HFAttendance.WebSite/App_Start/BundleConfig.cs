@@ -19,16 +19,15 @@ namespace HFAttendance.WebSite
 
             // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-           /* bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));*/
+            /* bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                         "~/Scripts/modernizr-*"));*/
 
             bundles.Add(new ScriptBundle("~/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css","~/Content/flat-ui.min.css"));
         }
     }
 }

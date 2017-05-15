@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HfAttendanceDbContext.cs" />
-    <Compile Include="HfItem.cs" />
-    <Compile Include="HfUser.cs" />
-    <Compile Include="HfUserItem.cs" />
+    <Compile Include="AttendanceDbContext.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
