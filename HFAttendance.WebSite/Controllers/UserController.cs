@@ -13,7 +13,21 @@ namespace HFAttendance.WebSite.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return View();
+            if (Session["nick"] != null)
+            {
+                ViewBag.Nick = Session["nick"];
+                return View();
+            }
+            else
+            {
+                return View("login");
+            }
+
+        }
+        public ActionResult Quit()
+        {
+            Session.Remove("nick");
+            return View("login");
         }
 
         [HttpGet]
@@ -34,6 +48,7 @@ namespace HFAttendance.WebSite.Controllers
             {
                 if (user.PassWord == pwd)
                 {
+                    Session["nick"] = nick;
                     return RedirectToAction("index", "user");
                 }
                 else
