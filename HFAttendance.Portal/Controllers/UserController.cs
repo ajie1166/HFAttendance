@@ -33,7 +33,7 @@ namespace HFAttendance.Portal.Controllers
         public ActionResult Quit()
         {
             User user = GetCurrentLoginUser();
-            UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "登录后花园成功") };
+            UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "退出后花园成功") };
             db.UserOperationLogs.Add(log);
             db.SaveChanges();
             Session.RemoveAll();
