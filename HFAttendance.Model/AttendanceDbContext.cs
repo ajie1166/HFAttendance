@@ -27,6 +27,8 @@
 
         public DbSet<UserItem> UserItems { get; set; }
 
+        public DbSet<UserOperationLog> UserOperationLogs { get; set; }
+
 
     }
 

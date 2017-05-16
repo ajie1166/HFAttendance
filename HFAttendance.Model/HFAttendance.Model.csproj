@@ -51,13 +51,52 @@
   <ItemGroup>
     <Compile Include="AttendanceDbContext.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Migrations\201705161050125_addLogDescriptionsuccess.cs" />
+    <Compile Include="Migrations\201705161050125_addLogDescriptionsuccess.Designer.cs">
+      <DependentUpon>201705161050125_addLogDescriptionsuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705161052087_addLogDescriptions.cs" />
+    <Compile Include="Migrations\201705161052087_addLogDescriptions.Designer.cs">
+      <DependentUpon>201705161052087_addLogDescriptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705161058340_addLogDescriptionsKey.cs" />
+    <Compile Include="Migrations\201705161058340_addLogDescriptionsKey.Designer.cs">
+      <DependentUpon>201705161058340_addLogDescriptionsKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705161101246_addLogDescriptionsGenerated.cs" />
+    <Compile Include="Migrations\201705161101246_addLogDescriptionsGenerated.Designer.cs">
+      <DependentUpon>201705161101246_addLogDescriptionsGenerated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705161108524_addLogDescriptionsNullable.cs" />
+    <Compile Include="Migrations\201705161108524_addLogDescriptionsNullable.Designer.cs">
+      <DependentUpon>201705161108524_addLogDescriptionsNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserItem.cs" />
+    <Compile Include="UserOperationLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705161050125_addLogDescriptionsuccess.resx">
+      <DependentUpon>201705161050125_addLogDescriptionsuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161052087_addLogDescriptions.resx">
+      <DependentUpon>201705161052087_addLogDescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161058340_addLogDescriptionsKey.resx">
+      <DependentUpon>201705161058340_addLogDescriptionsKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161101246_addLogDescriptionsGenerated.resx">
+      <DependentUpon>201705161101246_addLogDescriptionsGenerated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161108524_addLogDescriptionsNullable.resx">
+      <DependentUpon>201705161108524_addLogDescriptionsNullable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

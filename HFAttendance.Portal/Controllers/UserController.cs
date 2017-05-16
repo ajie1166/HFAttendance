@@ -32,7 +32,11 @@ namespace HFAttendance.Portal.Controllers
 
         public ActionResult Quit()
         {
+            User user = GetCurrentLoginUser();
+            UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "登录后花园成功") };
+            db.UserOperationLogs.Add(log);
             Session.RemoveAll();
+            db.SaveChanges();
             return View("Login");
         }
 
@@ -53,6 +57,9 @@ namespace HFAttendance.Portal.Controllers
                 if (user.PassWord == pwd)
                 {
                     SetCurrentSession(user);
+                    UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "登录后花园成功") };
+                    db.UserOperationLogs.Add(log);
+                    db.SaveChanges();
                     return RedirectToAction("index", "user");
                 }
                 else
