@@ -35,8 +35,8 @@ namespace HFAttendance.Portal.Controllers
             User user = GetCurrentLoginUser();
             UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "登录后花园成功") };
             db.UserOperationLogs.Add(log);
-            Session.RemoveAll();
             db.SaveChanges();
+            Session.RemoveAll();
             return View("Login");
         }
 
