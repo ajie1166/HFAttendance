@@ -71,6 +71,14 @@
     <Compile Include="Migrations\201705161108524_addLogDescriptionsNullable.Designer.cs">
       <DependentUpon>201705161108524_addLogDescriptionsNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705161143524_addLogDescriptions12.cs" />
+    <Compile Include="Migrations\201705161143524_addLogDescriptions12.Designer.cs">
+      <DependentUpon>201705161143524_addLogDescriptions12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705161149341_addLogDescriptions123.cs" />
+    <Compile Include="Migrations\201705161149341_addLogDescriptions123.Designer.cs">
+      <DependentUpon>201705161149341_addLogDescriptions123.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705161108524_addLogDescriptionsNullable.resx">
       <DependentUpon>201705161108524_addLogDescriptionsNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161143524_addLogDescriptions12.resx">
+      <DependentUpon>201705161143524_addLogDescriptions12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161149341_addLogDescriptions123.resx">
+      <DependentUpon>201705161149341_addLogDescriptions123.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

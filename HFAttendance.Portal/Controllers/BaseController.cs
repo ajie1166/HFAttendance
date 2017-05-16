@@ -18,5 +18,23 @@ namespace HFAttendance.Portal.Controllers
         {
             Session[typeof(User).FullName] = user;
         }
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+
+            User user = GetCurrentLoginUser();
+            string currentUrl = this.HttpContext.Request.Url.AbsolutePath.ToLower();
+            string loginUrl = "/user/login";
+            if (loginUrl == currentUrl)
+            {
+                return;
+            }
+            if (user == null)
+            {
+                this.HttpContext.Response.Redirect("/user/login");
+                return;
+            }
+        }
     }
 }

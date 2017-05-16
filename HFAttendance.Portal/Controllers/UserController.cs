@@ -13,17 +13,7 @@ namespace HFAttendance.Portal.Controllers
         // GET: User
         public ActionResult Index()
         {
-            User user = GetCurrentLoginUser();
-            if (user != null)
-            {
-                ViewBag.NickName = user.Name;
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-
+            return View();
         }
         public ActionResult Login()
         {
@@ -33,11 +23,11 @@ namespace HFAttendance.Portal.Controllers
         public ActionResult Quit()
         {
             User user = GetCurrentLoginUser();
-            UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "退出后花园成功") };
+            UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "退出后花园成功"), CreateTime = DateTime.Now };
             db.UserOperationLogs.Add(log);
             db.SaveChanges();
             Session.RemoveAll();
-            return View("Login");
+            return RedirectToAction("Login");
         }
 
         public ActionResult SystemInfo()
@@ -57,7 +47,7 @@ namespace HFAttendance.Portal.Controllers
                 if (user.PassWord == pwd)
                 {
                     SetCurrentSession(user);
-                    UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "登录后花园成功") };
+                    UserOperationLog log = new UserOperationLog() { JobNum = user.JobNum, Name = user.Name, LogDescriptions = string.Format("{0}于{1}{2}", user.Name, DateTime.Now, "登录后花园成功"), CreateTime = DateTime.Now };
                     db.UserOperationLogs.Add(log);
                     db.SaveChanges();
                     return RedirectToAction("index", "user");
