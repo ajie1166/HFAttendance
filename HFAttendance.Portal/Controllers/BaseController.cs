@@ -35,6 +35,10 @@ namespace HFAttendance.Portal.Controllers
                 this.HttpContext.Response.Redirect("/user/login");
                 return;
             }
+            else
+            {
+                ViewBag.NickName = user.Name;
+            }
         }
     }
 }

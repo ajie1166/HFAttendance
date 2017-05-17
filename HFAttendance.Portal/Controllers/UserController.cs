@@ -32,7 +32,12 @@ namespace HFAttendance.Portal.Controllers
 
         public ActionResult SystemInfo()
         {
-            return View();
+            User user = GetCurrentLoginUser();
+            var logs = from log in db.UserOperationLogs
+                       where log.JobNum == user.JobNum && log.CreateTime >= DateTime.Now.AddDays(-7)
+                       orderby log.CreateTime descending
+                       select log;
+            return View(logs);
         }
 
         [HttpPost]

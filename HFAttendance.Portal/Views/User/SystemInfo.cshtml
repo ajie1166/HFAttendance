@@ -1,8 +1,61 @@
-﻿
+﻿@using HFAttendance.Model
+@model IEnumerable<HFAttendance.Model.UserOperationLog>
 @{
     ViewBag.Title = "SystemInfo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SystemInfo</h2>
+<div class="page-content">
+    <div class="page-header">
+        <h1>
+            Widgets
+            <small>
+                <i class="icon-double-angle-right"></i>
+                Draggabble Widget Boxes &amp; Containers
+            </small>
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 widget-container-span">
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h5>Default Widget Box1</h5>
+
+                            <div class="widget-toolbar">
+                                <a href="javascript:;" data-action="collapse">
+                                    <i class="icon-chevron-up"></i>
+                                </a>
+
+                                <a href="javascript:;" data-action="close">
+                                    <i class="icon-remove"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                @foreach (UserOperationLog log in Model)
+                                {
+                                    <p class="alert alert-info">
+                                        @log.LogDescriptions
+                                    </p>
+                                }
+                                <p class="alert alert-info">
+                                    Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                                </p>
+                                <p class="alert alert-success">
+                                    Raw denim you probably haven't heard of them jean shorts Austin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
